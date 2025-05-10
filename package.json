@@ -1,0 +1,22 @@
+{
+  "name": "nest_next_dynamodb_aws_ddd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev:web": "npm run dev --workspace=apps/web",
+    "dev:api": "npm run start:dev --workspace=apps/api",
+    "lint": "eslint ."
+  },
+  "private": true,
+  "workspaces": [
+    "./apps/api",
+    "./apps/web"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

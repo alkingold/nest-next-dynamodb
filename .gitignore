@@ -1,0 +1,21 @@
+# Node.js
+node_modules/
+npm-debug.log*
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# testing
+/coverage
