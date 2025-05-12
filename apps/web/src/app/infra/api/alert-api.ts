@@ -1,8 +1,9 @@
-import { Alert } from "@/app/domain/alert/alert";
+import { Alert, CreateAlertDto, UpdateAlertDto } from "@/app/domain/alert/alert";
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
 
-export async function createAlert(data: Omit<Alert, "id" | "createdAt">) {
+export async function createAlert(data: CreateAlertDto) {
+  console.log('CALL CREATE API DATA', data);
   const res = await fetch(`${BASE_URL}/alerts`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -24,7 +25,7 @@ export async function fetchAlertById(id: string): Promise<Alert> {
   return res.json();
 }
 
-export async function updateAlert(id: string, data: Omit<Alert, "id" | "createdAt">) {
+export async function updateAlert(id: string, data: UpdateAlertDto) {
   const res = await fetch(`${BASE_URL}/alerts/${id}`, {
     method: 'PUT',
     headers: {
