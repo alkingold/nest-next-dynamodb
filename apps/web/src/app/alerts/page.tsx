@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useAlerts, useDeleteAlert } from "../lib/hooks/use-alerts";
+import { formatDateReadable } from "../utils/date.helper";
+import { capitalizeFirstLetter } from "../utils/string.helper";
 
 export default function AlertsPage() {
   const { data: alerts, isLoading, error } = useAlerts();
@@ -21,6 +23,9 @@ export default function AlertsPage() {
           <li key={alert.id} className="border p-3 rounded shadow bg-white">
             <h2 className="font-semibold">{alert.title}</h2>
             <p>{alert.message}</p>
+            <p>Severity: {capitalizeFirstLetter(alert.severity)}</p>
+            <p>Reminder: {alert.reminderAt ? formatDateReadable(alert.reminderAt) : 'none'}</p>
+            <p>Deadline: {alert.deadline ? formatDateReadable(alert.deadline) : 'none'}</p>
             <Link
               href={`/alerts/${alert.id}/edit`}
               className="text-blue-600 underline mt-2 inline-block"
