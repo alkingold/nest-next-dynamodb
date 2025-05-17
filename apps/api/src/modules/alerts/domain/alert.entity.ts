@@ -1,6 +1,7 @@
 import { CreateAlertDto } from "../dto/create-alert.dto";
 
 export type Severity = 'low' | 'medium' | 'high';
+export const SEVERITIES: Severity[] = ['low', 'medium', 'high'];
 
 export class Alert {
   constructor(
