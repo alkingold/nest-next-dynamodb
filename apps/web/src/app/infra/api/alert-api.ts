@@ -27,7 +27,7 @@ export async function fetchAlertById(id: string): Promise<Alert> {
 
 export async function updateAlert(id: string, data: UpdateAlertDto) {
   const res = await fetch(`${BASE_URL}/alerts/${id}`, {
-    method: 'PUT',
+    method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
     },
